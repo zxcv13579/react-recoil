@@ -5,7 +5,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -34,4 +33,17 @@ body {
   display: flex;
   justify-content: center;
   gap: 0 20px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  width: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 10px;
 }
