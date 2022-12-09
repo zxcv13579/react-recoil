@@ -1,14 +1,34 @@
-import React, { useId } from "react";
+import { useSetRecoilState } from "recoil";
+import { todoListState } from "../../states/todo";
 
-const TodoItem = () => {
-  const id = useId();
+const TodoItem = ({ id, text, isCompleted }) => {
+  const setTodoList = useSetRecoilState(todoListState);
+  const toggleCompleted = () => {
+    setTodoList((lists) =>
+      lists.map((list) =>
+        list.id === id
+          ? {
+              ...list,
+              isCompleted: !list.isCompleted,
+            }
+          : list
+      )
+    );
+  };
+  const deleteItem = () => {
+    setTodoList((lists) => lists.filter((list) => list.id !== id));
+  };
   return (
     <div className="item">
       <label className="label">
-        <input type="checkbox" />
-        <p>第一項</p>
+        <input
+          type="checkbox"
+          onChange={toggleCompleted}
+          checked={isCompleted}
+        />
+        <p>{text}</p>
       </label>
-      <button>X</button>
+      <button onClick={deleteItem}>X</button>
     </div>
   );
 };

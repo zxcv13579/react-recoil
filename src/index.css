@@ -12,7 +12,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+p {
+  line-height: 1;
+  margin: 0;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -35,15 +38,31 @@ body {
   gap: 0 20px;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-}
-
 .label {
   width: 200px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 0 10px;
+}
+
+.dashboard {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+.dashboard span {
+  font-weight: bold;
+  font-size: 1.24rem;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  display: flex;
+  align-items: center;
+}
+.item input[type="checkbox"]:checked + p {
+  text-decoration: line-through;
 }
