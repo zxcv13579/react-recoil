@@ -8,7 +8,9 @@ const AsyncTodoListPage = () => {
     <div>
       <TodoInput />
       <Suspense fallback="loading...">
-        <TodoInfo />
+        <TodoInfo id="1" />
+        <TodoInfo id="2" />
+        <TodoInfo id="3" />
       </Suspense>
       <hr />
       <p>沒有使用 Suspense</p>

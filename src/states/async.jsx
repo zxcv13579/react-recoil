@@ -1,18 +1,21 @@
-import { atom, selector } from "recoil";
+import { atom, selector, selectorFamily } from "recoil";
 
 export const idState = atom({
   key: "idState",
   default: "1",
 });
 
-export const todoQuery = selector({
+export const todoQuery = selectorFamily({
   key: "todoQuery",
-  get: async ({ get }) => {
-    const id = get(idState);
-    const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
-    const todos = res.json();
-    return todos;
-  },
+  get:
+    ({ id }) =>
+    async () => {
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/todos/${id}`
+      );
+      const todos = res.json();
+      return todos;
+    },
 });
 
 export const todoState = atom({
@@ -20,7 +23,7 @@ export const todoState = atom({
   default: selector({
     key: "todoState/default",
     get: ({ get }) => {
-      const todos = get(todoQuery);
+      const todos = get(todoQuery({ id: 4 }));
       return todos;
     },
   }),
