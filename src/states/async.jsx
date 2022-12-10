@@ -21,7 +21,6 @@ export const todoState = atom({
     key: "todoState/default",
     get: ({ get }) => {
       const todos = get(todoQuery);
-      console.log(todos.state);
       return todos;
     },
   }),
