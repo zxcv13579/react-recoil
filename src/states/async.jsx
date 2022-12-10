@@ -5,11 +5,17 @@ export const idState = atom({
   default: "1",
 });
 
+export const todoRequestIdState = atom({
+  key: "todoRequestIdState",
+  default: 0,
+});
+
 export const todoQuery = selectorFamily({
   key: "todoQuery",
   get:
     ({ id }) =>
-    async () => {
+    async ({ get }) => {
+      get(todoRequestIdState);
       const res = await fetch(
         `https://jsonplaceholder.typicode.com/todos/${id}`
       );
