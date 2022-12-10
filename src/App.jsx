@@ -1,5 +1,6 @@
 import { Routes, Route, Link, Outlet } from "react-router-dom";
 import TodoListPage from "./pages/TodoListPage";
+import AsyncTodoListPage from "./pages/AsyncTodoListPage";
 
 const Dashboard = () => {
   return (
@@ -19,7 +20,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Dashboard />}>
         <Route path="todo" element={<TodoListPage />} />
-        <Route path="custom" element={<h1>custom</h1>} />
+        <Route path="custom" element={<AsyncTodoListPage />} />
       </Route>
     </Routes>
   );
