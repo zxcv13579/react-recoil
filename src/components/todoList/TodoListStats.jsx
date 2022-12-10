@@ -1,11 +1,12 @@
 import { useRecoilValue } from "recoil";
 import { todoListDashboard } from "../../states/todo";
+import styles from "./styles.module.css";
 
 export const TodoListStats = () => {
   const { totalNum, totalCompleted, totalUncompleted, percent } =
     useRecoilValue(todoListDashboard);
   return (
-    <div className="dashboard">
+    <div className={styles.dashboard}>
       <p>
         所有清單：<span>{totalNum}</span>
       </p>

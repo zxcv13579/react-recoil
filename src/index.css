@@ -3,14 +3,13 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color-scheme: light dark;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  background-color: #ccc;
 }
 p {
   line-height: 1;
@@ -28,41 +27,4 @@ a:hover {
 body {
   width: 100%;
   margin: 0 auto;
-}
-
-.header {
-  padding: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 0 20px;
-}
-
-.label {
-  width: 200px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0 10px;
-}
-
-.dashboard {
-  display: flex;
-  align-items: center;
-  gap: 0 20px;
-}
-.dashboard span {
-  font-weight: bold;
-  font-size: 1.24rem;
-}
-.items {
-  display: flex;
-  flex-direction: column;
-}
-.item {
-  display: flex;
-  align-items: center;
-}
-.item input[type="checkbox"]:checked + p {
-  text-decoration: line-through;
 }

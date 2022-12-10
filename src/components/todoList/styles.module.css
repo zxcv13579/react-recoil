@@ -1,0 +1,71 @@
+.header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0 20px;
+}
+
+.dashboard {
+  display: flex;
+  align-items: center;
+  gap: 0 20px;
+}
+.dashboard span {
+  font-weight: bold;
+  font-size: 1.24rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 3rem;
+  color: black;
+  letter-spacing: 0.04rem;
+  text-align: center;
+}
+.creator {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  font-size: 1.25rem;
+  padding: 4px 10px;
+}
+
+.listContainer {
+  width: 100%;
+  padding: 40px;
+  background-color: white;
+}
+
+.list {
+  width: 100%;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 15px 0;
+}
+
+.item input[type="checkbox"]:checked + p {
+  text-decoration: line-through;
+}
+
+.label {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 10px;
+}

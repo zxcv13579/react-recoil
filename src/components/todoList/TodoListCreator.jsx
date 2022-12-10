@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { todoListState } from "../../states/todo";
+import styles from "./styles.module.css";
 
 const getKey = () => Math.random().toString().substring(2);
 
@@ -24,8 +25,13 @@ const TodoListCreator = () => {
   };
 
   return (
-    <div>
-      <input type="text" value={inputValue} onChange={changeValue} />
+    <div className={styles.creator}>
+      <input
+        className={styles.input}
+        type="text"
+        value={inputValue}
+        onChange={changeValue}
+      />
       <button onClick={addTodo}>Add</button>
     </div>
   );

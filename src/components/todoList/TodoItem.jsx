@@ -1,5 +1,6 @@
 import { useSetRecoilState } from "recoil";
 import { todoListState } from "../../states/todo";
+import styles from "./styles.module.css";
 
 const TodoItem = ({ id, text, isCompleted }) => {
   const setTodoList = useSetRecoilState(todoListState);
@@ -19,8 +20,8 @@ const TodoItem = ({ id, text, isCompleted }) => {
     setTodoList((lists) => lists.filter((list) => list.id !== id));
   };
   return (
-    <div className="item">
-      <label className="label">
+    <div className={styles.item}>
+      <label className={styles.label}>
         <input
           type="checkbox"
           onChange={toggleCompleted}
