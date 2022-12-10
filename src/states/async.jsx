@@ -1,11 +1,11 @@
-import { atom, selector, selectorFamily } from "recoil";
+import { atom, atomFamily, selector, selectorFamily } from "recoil";
 
 export const idState = atom({
   key: "idState",
   default: "1",
 });
 
-export const todoRequestIdState = atom({
+export const todoRequestIdState = atomFamily({
   key: "todoRequestIdState",
   default: 0,
 });
@@ -15,7 +15,7 @@ export const todoQuery = selectorFamily({
   get:
     ({ id }) =>
     async ({ get }) => {
-      get(todoRequestIdState);
+      get(todoRequestIdState(id));
       const res = await fetch(
         `https://jsonplaceholder.typicode.com/todos/${id}`
       );
