@@ -1,9 +1,15 @@
 import { atom, selector } from "recoil";
 
+export const idState = atom({
+  key: "idState",
+  default: "1",
+});
+
 export const todoQuery = selector({
   key: "todoQuery",
-  get: async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  get: async ({ get }) => {
+    const id = get(idState);
+    const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
     const todos = res.json();
     return todos;
   },
